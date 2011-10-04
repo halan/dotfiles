@@ -7,3 +7,5 @@ source ~/.bash/config
 if [ -f ~/.localrc ]; then
   source ~/.localrc
 fi
+
+export REALLY_GEM_UPDATE_SYSTEM=true
