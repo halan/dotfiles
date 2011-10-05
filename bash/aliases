@@ -17,3 +17,4 @@ alias reload='. ~/.bash_profile'
 
 alias grep='grep -r --color'
 alias ls='ls --color'
+alias bex='bundle exec'
