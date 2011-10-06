@@ -1,4 +1,5 @@
-= Ryan Bates Dot Files
+= Himni Dot Files
+({Ryan Bates dot files based}[http://github.com/ryanb/dotfiles])
 
 These are config files to set up a system the way I like it.
 
