@@ -74,6 +74,24 @@ __git_ps1 ()
 	fi
 }
 
+__git_user () 
+{ 
+  	local b="$(git symbolic-ref HEAD 2>/dev/null)"
+    if [ -n "$b" ]; then
+        local u="$(git config user.name)";
+        echo "$u";
+    fi
+}
+
+__git_email () 
+{ 
+  	local b="$(git symbolic-ref HEAD 2>/dev/null)"
+    if [ -n "$b" ]; then
+        local e="$(git config user.email)";
+        echo "$e";
+    fi
+}
+
 __gitcomp ()
 {
 	local all c s=$'\n' IFS=' '$'\t'$'\n'
