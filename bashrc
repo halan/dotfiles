@@ -9,3 +9,5 @@ if [ -f ~/.localrc ]; then
 fi
 
 export REALLY_GEM_UPDATE_SYSTEM=true
+
+trap 'echo -en "\e]0;$BASH_COMMAND\007"' DEBUG
