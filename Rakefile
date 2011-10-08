@@ -32,6 +32,22 @@ task :install do
   end
 end
 
+desc "remove the dot files instaleds on user's home directory"
+task :uninstall do
+  Dir['*'].each do |file|
+    next if %w[Rakefile README.rdoc LICENSE].include? file
+
+    home_file = File.join(ENV['HOME'], ".#{file.sub('.erb', '')}")
+    if File.exist?(home_file)
+      if File.symlink?(home_file)
+        File.unlink(home_file)
+      else
+        File.delete(home_file)
+      end
+    end
+  end
+end
+
 def replace_file(file)
   system %Q{rm -rf "$HOME/.#{file.sub('.erb', '')}"}
   link_file(file)
