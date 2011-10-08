@@ -41,7 +41,7 @@ task :uninstall do
     if File.exist?(home_file)
       if File.symlink?(home_file)
         File.unlink(home_file)
-      else
+      elsif File.identical? file, home_file
         File.delete(home_file)
       end
     end
